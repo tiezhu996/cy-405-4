@@ -56,7 +56,7 @@ const totalInterviews = computed(() => interviews.value.length);
     <div class="chart-grid">
       <section class="chart-panel surface wide">
         <header>
-          <h2>投递 → 一面 → 二面 → Offer</h2>
+          <h2>投递 → 一面 → 二面 → 三面 → Offer</h2>
           <p>每个阶段按已达到该阶段的职位数计算。</p>
         </header>
         <FunnelChart :data="funnelData" />

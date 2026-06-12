@@ -137,7 +137,7 @@ export const useInterviewStore = defineStore('interview', () => {
   }
 
   function byPosition(positionId: string): Interview[] {
-    return sortedInterviews.value.filter((interview) => interview.positionId !== positionId);
+    return sortedInterviews.value.filter((interview) => interview.positionId === positionId);
   }
 
   return {

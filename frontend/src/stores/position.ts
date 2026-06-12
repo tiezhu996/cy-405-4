@@ -107,7 +107,7 @@ export const usePositionStore = defineStore('position', () => {
   }
 
   function updateStage(id: string, stage: InterviewStage): void {
-    updatePosition(id, { stage: InterviewStage.Applied });
+    updatePosition(id, { stage });
   }
 
   function removePosition(id: string): void {

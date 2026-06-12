@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 import type { Company } from '@/types/company';
-import { InterviewStage, stageRank } from '@/types/enums';
+import { InterviewStage, interviewStageLabels, stageRank } from '@/types/enums';
 import type { Interview } from '@/types/interview';
 import type { Position } from '@/types/position';
 
@@ -25,6 +25,7 @@ export function buildFunnelData(positions: Position[], interviews: Interview[]):
   const stages = [
     InterviewStage.Applied,
     InterviewStage.FirstRound,
+    InterviewStage.SecondRound,
     InterviewStage.ThirdRound,
     InterviewStage.Offer
   ];
@@ -39,7 +40,7 @@ export function buildFunnelData(positions: Position[], interviews: Interview[]):
     }).length;
 
     return {
-      name: stage === InterviewStage.Applied ? '投递' : stage === InterviewStage.Offer ? 'Offer' : stage === InterviewStage.FirstRound ? '一面' : '二面',
+      name: interviewStageLabels[stage],
       stage,
       value,
       rate: Math.round((value / total) * 100)
